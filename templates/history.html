@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    History
+{% endblock %}
+
+{% block main %}
+<style>
+table, th, td {
+    border: 1px solid black;
+    padding: 5px;
+}
+</style>
+    <table>
+        <tr>
+            <td>  Time/Date  </td>
+            <td>  Symbol  </td>
+
+            <td>  Shares  </td>
+            <td>  Price  </td>
+            <td>  Value  </td>
+
+        </tr>
+            {% for stock in stocks%}
+        <tr>
+
+
+                <td>  {{ stock.timestamp }}  </td>
+                <td>  {{ stock.symbol }}  </td>
+                <td>  {{ stock.shares }}  </td>
+                <td>  {{ stock.price | usd }}  </td>
+                <td> {{ stock.price * stock.shares }} </td>
+
+
+
+        </tr>
+            {% endfor %}
+
+
+    </table>
+
+
+{% endblock %}

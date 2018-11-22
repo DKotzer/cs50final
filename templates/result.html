@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Quote
+{% endblock %}
+
+{% block main %}
+    <div><b>
+        <h1><u>Results</u></h1>
+        <br>
+        <li>
+            Name: {{ stock.name }}
+        </li>
+        <br>
+        <li>
+            Price: {{ price }}
+        </li>
+        <br>
+        <li>
+            Symbol: {{ stock.symbol }}
+        </li>
+        <br><br></b>
+    </div>
+    <form method="get" action="/buy">
+        <button type="submit">Buy</button>
+    </form>
+    <!--<button  type="submit">Sell</button>-->
+    <form method="get" action="/quote">
+        <button  type="submit">Back</button>
+    </form>
+{% endblock %}

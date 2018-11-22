@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Buy
+{% endblock %}
+
+{% block main %}
+    <div><b>
+        <h1><u>Successfully bought:</u></h1>
+        <br>
+        <li>
+            Name: {{ rows.name }}
+        </li>
+        <li>
+            Price: {{ rows.price | usd }}
+        </li>
+
+        <li>
+            Shares: {{ shares }}
+        </li>
+        <li>
+            Total Paid: {{ total | usd }}
+        </li>
+        <li>
+            Symbol: {{ rows.symbol }}
+        </li>
+        <li>
+            Cash: {{ cash | usd }}
+        </li>
+        <br><br></b>
+    </div>
+    <form method="get" action="/">
+        <button type="submit">Index</button>
+    </form>
+    <!--<button  type="submit">Sell</button>-->
+    <form method="get" action="/buy">
+        <button  type="submit">Back</button>
+    </form>
+{% endblock %}

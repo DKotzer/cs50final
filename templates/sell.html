@@ -1,0 +1,58 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Sell
+{% endblock %}
+
+{% block main %}
+
+    <form action="/sell" method="post">
+        <div>Symbol:
+            <select class="form-control" name="symbol" placeholder="Symbol" type="text">
+                {% for stock in stocks %}
+
+                    <option value="{{stock.symbol}}"> {{ stock.symbol }} </option>
+
+                {% endfor %}
+
+            </select>
+
+
+            <br>
+
+            <br>
+            Shares:
+            <input name="shares" placeholder="1" min="1" type="number"/>
+            <br><br>
+
+        </div>
+
+        <button class="btn btn-primary" type="submit">Sell</button>
+    </form>
+{% endblock %}
+
+
+<!---
+            <input autocomplete="off" autofocus class="form-control" name="symbol" placeholder="Symbol" type="text"/>
+<input autocomplete="off" autofocus class="form-control" name="symbol" placeholder="Symbol" type="text"/>
+    <form action="/sell" method="post">
+        <div>
+            <select name="symbol" form="symbols" type="text">
+
+                <option value="amd">AMD</option>
+
+
+            </select>
+            Symbol:
+            <input autocomplete="off" autofocus class="form-control" name="symbol" placeholder="Symbol" type="text"/>
+            <br>
+            <br>
+            Shares:
+            <input name="shares" placeholder="1" min="1" type="number"/>
+            <br><br>
+
+        </div>
+
+        <button class="btn btn-primary" type="submit">Sell</button>
+    </form>
+--->
